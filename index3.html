@@ -1,15 +1,14 @@
-
 <!doctype html>
 <html ng-app="customersApp" class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motor Yachts | Hatteras Yachts</title>
+    <title>Interior Design Houses</title>
 
     <script src="js/vendor/angular.js"></script>
-    <script src="js/vendor/angular-animaate.js"></script>
-    <script src="js/vendor/angular-route.js"></script>
+    <script src="js/vendor/angular-animate.min.js"></script>
+    <script src="js/vendor/angular-route.min.js"></script>
 
     <!-- The font Awesome code below is several revisions back.
           https://stackoverflow.com/questions/14698589/fontawesome-not-available-as-a-font-family
@@ -45,10 +44,13 @@
          <div id="topbar-responsive" class="topbar-responsive-links">
            <div class="top-bar-right">
              <ul class="menu simple vertical medium-horizontal">
-               <li><a href="#">MOTOR YACHTS</a></li>
-               <li><a href="sportfish/index.html">SPORTFISH</a></li>
-               <li><a href="index.html#!/experience">EXPERIENCE</a></li>
-               <li><a href="index.html#!/request">REQUEST</a></li>
+               <li><a href=../"#">Interior Design</a></li>
+               <li><a href="index.html#!/services">services</a></li>
+               <li><a href="index.html/news">news</a></li>
+               <li><a href="index.html/customers">customer</a></li>
+               <li><a href="index.html/works">works</a></li>
+               <li><a href="index.html/contact">contact</a></li>
+               <li><a href="#">REQUEST</a></li>
                <li><a href="#">OUR STORY</a></li>
                <li><a href="#">FIND A DEALER</a></li>
                <li>
@@ -67,7 +69,10 @@
 
 
       <!-- *Begin Angular -->
+
+      test1
            <div ng-view></div>
+      test2
          <!-- *End Angular -->
 
       <!-- *Begin Footer -->
@@ -130,12 +135,12 @@
                 </div>
                 <div class="column">
                   <ul class="menu marketing-site-footer-bottom-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Interior design</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">works</a></li>
+                    <li><a href="#">contact</a></li>
+                    <li><a href="#">request</a></li>
                   </ul>
                 </div>
                 https://www.quora.com/AngularJS-Why-angularJS-templates-doesnt-work-in-chrome-browser-whereas-it-works-fine-on-Firefox
@@ -154,29 +159,63 @@
 
       <script>
            var app = angular.module('customersApp',['ngRoute']);
+
            app.config(function($routeProvider) {
              $routeProvider.when('/',
                {
                  controller:'CustomersController',
                  templateUrl: 'app/views/customers.html'
                })
-             .when('/experience',
+             .when('/services',
                {
-                 controller: 'ExperienceController',
-                 templateUrl: 'app/views/experience.html'
+                 controller: 'servicesController',
+                 templateUrl: 'app/views/services.html'
                })
-               .when('/request',
-                 {
-                   controller: 'RequestController',
-                   templateUrl: 'app/views/request.html'
-                 })
+
+              .when('/works',
+              {
+               controller: 'worksController',
+               templateUrl: 'app/views/works.html'
+               })
+
+
+               .when('/news',
+               {
+               controller: 'newsController',
+               templateUrl: 'app/views/news.html'
+             })
+
+
+             .when('/contact',
+             {
+             controller: 'contactController',
+             templateUrl: 'app/views/contact.html'
+           })
+
+
+
+
            });
-           app.controller('ExperienceController', function($scope){
+           app.controller('ServicesController', function($scope){
              $scope.customerID = 5;
            });
-           app.controller('RequestController', function($scope){
+
+           app.controller('contactController', function($scope){
              $scope.customerID = 5;
            });
+
+
+           app.controller('newsController', function($scope){
+             $scope.customerID = 5;
+           });
+
+
+
+           app.controller('worksController', function($scope){
+             $scope.customerID = 5;
+           });
+
+
            app.controller('CustomersController', function($scope) {
              $scope.customers = [
                  {"id": 1, "name":"Ted", "total": 5.996},
