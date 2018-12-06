@@ -34,6 +34,8 @@
       <!-- *Begin Nav -->
    <div data-sticky-container>
      <div class="sticky" data-sticky data-margin-top="0">
+
+
        <nav class="top-bar topbar-responsive">
          <div class="top-bar-title">
            <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
@@ -45,10 +47,10 @@
            <div class="top-bar-right">
              <ul class="menu simple vertical medium-horizontal">
                <li><a href="#">Arts</a></li>
-               <li><a href="customers/index.html">customers</a></li>
-               <li><a href="index.html#!/experience">News</a></li>
-               <li><a href="index.html#!/request">Services</a></li>
-               <li><a href="index.html#!/story">Works</a></li>
+               <li><a href="customers/index.html#!/customers">customers</a></li>
+               <li><a href="index.html#!/news">News</a></li>
+               <li><a href="services/index.html#!/Services">Services</a></li>
+               <li><a href="works/index.html#!/works">Works</a></li>
                <li><a href="index.html#!/dealer">FIND A DEALER</a></li>
                <li>
                  <button type="button" class="button hollow topbar-responsive-button">INVENTORY</button>
@@ -62,6 +64,41 @@
 
        <!-- *End Nav -->
 
+       <div class="row expanded collapse">
+         <div class="column">
+           <div class="large-article-header">
+             <div class="large-article-header-content">
+               <div class="center-container">
+                 <div class="article-date">
+                   <p>Published on Jan 12, 2016</p>
+                 </div>
+                 <div class="article-title">
+                   <h1>A Great Big Article Title Goes Here</h1>
+                 </div>
+                 <div class="article-details">
+                   <div class="article-author">
+                     <img src="https://unsplash.it/50/50?image=1005" alt="" />
+                     <a href="#">Jane Austen</a>
+                   </div>
+                   <div class="article-comments">
+                     <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 3 Comments</a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+ <!-- *Begin header-->
+
+
+
+
+ <!-- *End header -->
+
 
 
 
@@ -69,7 +106,6 @@
            <div ng-view></div>
          <!-- *End Angular -->
 
-         <p><a data-open="exampleModal1">Click me for a modal(in index.html)</a></p>
 
          <div class="reveal" id="exampleModal1" data-reveal>
            <h1>Awesome. I Have It.</h1>
@@ -79,6 +115,27 @@
              <span aria-hidden="true">&times;</span>
            </button>
          </div>
+
+
+
+<!--*begin content-->
+
+<div class="marketing-site-hero">
+  <div class="marketing-site-hero-content">
+    <h1>Yeti Snowcone Agency</h1>
+    <p class="subheader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam omnis, maxime libero natus qui minus!</p>
+    <a href="#" class="round button">learn more</a>
+  </div>
+</div>
+
+
+
+
+<!--*ened content-->
+
+
+
+
 
 
 
@@ -156,69 +213,69 @@
           </footer>
           <!-- *End Footer -->
 
+          <script>
+                    var app = angular.module('customerApp',['ngRoute']);
+                    app.config(function($routeProvider) {
+                      $routeProvider.when('/contact',
+                        {
+                          controller:'contactController',
+                          templateUrl: 'app/views/contact.html'
+                        })
+                      .when('/customers',
+                        {
+                          controller: 'customersController',
+                          templateUrl: 'app/views/Customers.html'
+                        })
+                        .when('/news',
+                          {
+                            controller: 'newsController',
+                            templateUrl: 'app/views/news.html'
+                          })
+                       .when('/services',
+                          {
+                            controller: 'servicesController',
+                            templateUrl: 'app/views/services.html'
+                          })
+                       .when('/Works',
+                          {
+                            controller: 'worksontroller',
+                            templateUrl: 'app/views/works.html'
+                          })
+                      .when('/adam',
+                         {
+                           controller: 'AdamController',
+                           templateUrl: 'app/views/adam.html'
+                         })
+                    });
+                    app.controller('customersController', function($scope){
+                      $scope.customerID = 5;
+                    });
+                    app.controller('contactController', function($scope){
+                      $scope.customerID = 5;
+                    });
+                    app.controller('newsController', function($scope){
+                      $scope.customerID = 5;
+                    });
+                    app.controller('servicesController', function($scope){
+                      $scope.customerID = 5;
+                    });
+                    app.controller('AdamController', function($scope){
+                      $scope.customerID = 5;
+                    });
+                    app.controller('worksController', function($scope) {
+                      $scope.customers = [
+                          {"id": 1, "name":"Ted", "total": 5.996},
+                          {"id": 2, "name":"Michelle", "total": 10.994},
+                          {"id": 3, "name":"Zed", "total": 10.99},
+                          {"id": 4, "name":"Tina", "total": 15.994}
+                        ];
+                      });
+                  </script>
 
+                  
 
       <script src="js/vendor/jquery.js"></script>
       <script src="js/vendor/what-input.js"></script>
       <script src="js/vendor/foundation.js"></script>
       <script src="js/app.js"></script>
-
-
-      <script>
-           var app = angular.module('customersApp',['ngRoute']);
-           app.config(function($routeProvider) {
-             $routeProvider.when('/',
-               {
-                 controller:'customersController',
-                 templateUrl: 'app/views/customers.html'
-               })
-             .when('/news',
-               {
-                 controller: 'NewsController',
-                 templateUrl: 'app/views/news.html'
-               })
-               .when('/Services',
-                 {
-                   controller: 'ServicesController',
-                   templateUrl: 'app/views/Services.html'
-                 })
-              .when('/works',
-                 {
-                   controller: 'worksController',
-                   templateUrl: 'app/views/works.html'
-                 })
-              .when('/Contact',
-                 {
-                   controller: 'ContactController',
-                   templateUrl: 'app/views/Contact.html'
-                 })
-             .when('/adam',
-                {
-                  controller: 'AdamController',
-                  templateUrl: 'app/views/adam.html'
-                })
-           });
-           app.controller('ContactController', function($scope){
-             $scope.customerID = 5;
-           });
-           app.controller('NewsController', function($scope){
-             $scope.customerID = 5;
-           });
-           app.controller('ServicesController', function($scope){
-             $scope.customerID = 5;
-           });
-           app.controller('WorksController', function($scope){
-             $scope.customerID = 5;
-           });
-           app.controller('AdamController', function($scope){
-             $scope.customerID = 5;
-           });
-           app.controller('CustomersController', function($scope) {
-             $scope.customers = [
-                 {"id": 1, "name":"Ted", "total": 5.996},
-                 {"id": 2, "name":"Michelle", "total": 10.994},
-                 {"id": 3, "name":"Zed", "total": 10.99},
-                 {"id": 4, "name":"Tina", "total": 15.994}
-               ];
-             });
-         </script>
+      <script src="js/foundation/foundation.magellan.js"></script>

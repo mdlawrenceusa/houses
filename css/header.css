@@ -1,41 +1,94 @@
-.marketing-site-hero {
-  background: url("https://housedecorates.com/wp-content/uploads/2015/09/interior-design-living-room-brown-and-red-image-emrv.jpg") top right no-repeat;
-  height: 65vh;
+
+.large-article-header {
+  background: url("https://unsplash.it/1024/500/?blur") no-repeat center;
   background-size: cover;
+  height: 31.25rem;
+  position: relative;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .large-article-header {
+    height: 20.83333rem;
+  }
+}
+
+.large-article-header-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  bottom: 3.125rem;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .large-article-header-content {
+    bottom: 1.25rem;
+  }
+}
+
+.large-article-header-content .center-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .large-article-header-content .center-container {
+    width: 100%;
+    padding: 0 1.25rem;
+  }
+}
+
+.large-article-header-content .article-date {
+  color: #fefefe;
+}
+
+.large-article-header-content .article-title h1 {
+  line-height: 3.125rem;
+  color: #fefefe;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .large-article-header-content .article-title h1 {
+    line-height: 1.875rem;
+  }
+}
+
+.large-article-header-content .article-details {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-@media screen and (min-width: 40em) {
-  .marketing-site-hero {
-    background-position: center center;
-  }
+.large-article-header-content .article-details a {
+  color: #fefefe;
 }
 
-.marketing-site-hero-content {
-  max-width: 75rem;
-  margin: 0 auto;
-  padding-left: 5%;
-  padding-right: 5%;
+.large-article-header-content .article-author {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0;
 }
 
-.marketing-site-hero-content h1 {
-  font-size: 32px;
+.large-article-header-content .article-author img {
+  border-radius: 3.125rem;
 }
 
-.marketing-site-hero-content .button.round {
-  border-radius: 5000px;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 40em) {
-  .marketing-site-hero-content {
-    padding-left: 50%;
-  }
+.large-article-header-content .article-author a {
+  margin-left: 1rem;
 }
